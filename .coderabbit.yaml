@@ -8,3 +8,38 @@ reviews:
     enabled: true
     allow_author_approval: false
     max_merge_risk: low
+    # Both required assessments must be low or minimal. Missing assessments do not authorize approval.
+    max_security_risk: low
+    # Exclude policy, CI, ownership, agent, tooling, and dependency changes.
+    overrides:
+      - enabled: false
+        paths:
+          - ".coderabbit.config.ts"
+          - ".coderabbit.yaml"
+          - ".coderabbit.yml"
+          - ".github/**"
+          - ".github/workflows/**"
+          - ".github/CODEOWNERS"
+          - ".devcontainer/**"
+          - ".vscode/**"
+          - ".agents/**"
+          - "AGENTS.md"
+          - "**/AGENTS.md"
+          - "CODEOWNERS"
+          - "docs/CODEOWNERS"
+          - "**/CODEOWNERS"
+          - ".gitmodules"
+          - ".npmrc"
+          - "**/.npmrc"
+          - "package.json"
+          - "**/package.json"
+          - "package-lock.json"
+          - "**/package-lock.json"
+          - "pnpm-lock.yaml"
+          - "**/pnpm-lock.yaml"
+          - "yarn.lock"
+          - "**/yarn.lock"
+          - "bun.lock"
+          - "**/bun.lock"
+          - "bun.lockb"
+          - "**/bun.lockb"
