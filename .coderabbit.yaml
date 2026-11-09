@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+# RepoKan public repositories: CodeRabbit may approve low-risk PRs only.
+# AI approval does not replace independent human review, required CI, or owner approval to merge.
+reviews:
+  auto_review:
+    enabled: true
+  auto_approvals:
+    enabled: true
+    allow_author_approval: false
+    max_merge_risk: low
+    # Both required assessments must be low or minimal. Missing assessments do not authorize approval.
+    max_security_risk: low
+    # Exclude policy, CI, ownership, agent, tooling, and dependency changes.
+    overrides:
+      - enabled: false
+        paths:
+          - ".coderabbit.config.ts"
+          - ".coderabbit.yaml"
+          - ".coderabbit.yml"
+          - ".github/**"
+          - ".github/workflows/**"
+          - ".github/CODEOWNERS"
+          - ".devcontainer/**"
+          - ".vscode/**"
+          - ".agents/**"
+          - ".copilot/**"
+          - "mcp_config.json"
+          - "AGENTS.md"
+          - "**/AGENTS.md"
+          - "CODEOWNERS"
+          - "docs/CODEOWNERS"
+          - "**/CODEOWNERS"
+          - ".gitmodules"
+          - ".npmrc"
+          - "**/.npmrc"
+          - "package.json"
+          - "**/package.json"
+          - "package-lock.json"
+          - "**/package-lock.json"
+          - "pnpm-lock.yaml"
+          - "**/pnpm-lock.yaml"
+          - "yarn.lock"
+          - "**/yarn.lock"
+          - "bun.lock"
+          - "**/bun.lock"
+          - "bun.lockb"
+          - "**/bun.lockb"
